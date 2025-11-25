@@ -1,0 +1,77 @@
+/* Additional Login-specific Styles */
+
+/* Forgot Password Link */
+.text-sm {
+  font-size: 0.875rem;
+}
+
+.hover\:text-zinc-200:hover {
+  color: #e4e4e7;
+}
+
+.transition-colors {
+  transition-property: color, background-color, border-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.duration-200 {
+  transition-duration: 200ms;
+}
+
+/* Demo Credentials Box */
+.bg-zinc-900\/50 {
+  background-color: rgba(24, 24, 27, 0.5);
+}
+
+.border-zinc-800 {
+  border-color: #27272a;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+}
+
+/* Flex Utilities */
+.flex {
+  display: flex;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+/* Margin Utilities */
+.mt-6 {
+  margin-top: 1.5rem;
+}
+
+/* Padding Utilities */
+.p-4 {
+  padding: 1rem;
+}
+
+/* Text Utilities */
+.text-center {
+  text-align: center;
+}
+
+/* Additional responsive utilities */
+@media (max-width: 640px) {
+  .auth-card-glass {
+    margin: 1rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .auth-header-glow h1 {
+    font-size: 1.75rem;
+  }
+}
