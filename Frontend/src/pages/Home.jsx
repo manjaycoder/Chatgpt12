@@ -50,7 +50,7 @@ const Home = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/chat",
+        "http://https://chatgpt12-b5gz.onrender.com/api/chat",
         {
           tittle,
         },
@@ -70,12 +70,14 @@ const Home = () => {
   // Ensure at least one chat exists initially
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/chat", { withCredentials: true })
+      .get("http://https://chatgpt12-b5gz.onrender.com/api/chat", {
+        withCredentials: true,
+      })
       .then((response) => {
         dispatch(setChats(response.data.chats.reverse()));
       });
 
-    const tempSocket = io("http://localhost:3000", {
+    const tempSocket = io("http://https://chatgpt12-b5gz.onrender.com", {
       withCredentials: true,
     });
 
@@ -133,7 +135,7 @@ const Home = () => {
   const getMessages = async (chatId) => {
     try {
       const response = await axios.get(
-        `http://localhost:3000/api/chat/messages/${chatId}`,
+        `http://https://chatgpt12-b5gz.onrender.com/api/chat/messages/${chatId}`,
         { withCredentials: true }
       );
 
