@@ -58,7 +58,7 @@ const Login = () => {
 
     try {
       const response = await axios.post(
-        "http://https://chatgpt12-b5gz.onrender.com/api/auth/login",
+        "https://chatgpt12-b5gz.onrender.com/api/auth/login",
         {
           email: form.email,
           password: form.password,
