@@ -13,7 +13,7 @@ const app = express()
 
 
 app.use(cors({
-    origin: "localhost:5173",
+    origin: "https://chatgpt12-1.onrender.com",
     credentials: true,
 }))
 
