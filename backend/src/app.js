@@ -10,19 +10,10 @@ const chatRoutes = require('./routes/chat.routes')
 const app = express()
 
 // CORS configuration for both development and production
-const allowedOrigins = [
-    'http://localhost:5173',
-    'https://gptpro.onrender.com'
-];
+
 
 app.use(cors({
-    origin: function(origin, callback) {
-        if (!origin || allowedOrigins.includes(origin)) {
-            callback(null, true);
-        } else {
-            callback(new Error('Not allowed by CORS'));
-        }
-    },
+    origin: "localhost:5173",
     credentials: true,
 }))
 
@@ -36,9 +27,9 @@ app.use('/api/chat', chatRoutes)
 
 
 
-app.get("*name", (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/index.html'));
-});
-
+app.use(express.static(path.join(__dirname,"../public")))
+app.get("*name",(req,res)=>{
+    res.sendFile(path.join(__dirname,"../public/index.html"))
+})
 
 module.exports = app

@@ -69,14 +69,14 @@ const Register = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/auth/register",
+        "http://https://chatgpt12-b5gz.onrender.com/api/auth/register",
         {
           fullname: {
-    firstname: form.firstname,
-    lastname: form.lastname,
-  },
-  email: form.email,
-  password: form.password,
+            firstname: form.firstname,
+            lastname: form.lastname,
+          },
+          email: form.email,
+          password: form.password,
         },
         {
           withCredentials: true,
