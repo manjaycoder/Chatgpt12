@@ -69,7 +69,7 @@ const Register = () => {
 
     try {
       const response = await axios.post(
-        "http://https://chatgpt12-b5gz.onrender.com/api/auth/register",
+        "https://chatgpt12-b5gz.onrender.com/api/auth/register",
         {
           fullname: {
             firstname: form.firstname,

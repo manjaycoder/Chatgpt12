@@ -50,7 +50,7 @@ const Home = () => {
 
     try {
       const response = await axios.post(
-        "http://https://chatgpt12-b5gz.onrender.com/api/chat",
+        "https://chatgpt12-b5gz.onrender.com/api/chat",
         {
           tittle,
         },
@@ -70,14 +70,14 @@ const Home = () => {
   // Ensure at least one chat exists initially
   useEffect(() => {
     axios
-      .get("http://https://chatgpt12-b5gz.onrender.com/api/chat", {
+      .get("https://chatgpt12-b5gz.onrender.com/api/chat", {
         withCredentials: true,
       })
       .then((response) => {
         dispatch(setChats(response.data.chats.reverse()));
       });
 
-    const tempSocket = io("http://https://chatgpt12-b5gz.onrender.com", {
+    const tempSocket = io("https://chatgpt12-b5gz.onrender.com", {
       withCredentials: true,
     });
 
@@ -122,20 +122,20 @@ const Home = () => {
       content: trimmed,
     });
 
-    // try {
-    //   const reply = await fakeAIReply(trimmed);
-    //   dispatch(addAIMessage(activeChatId, reply));
-    // } catch {
-    //   dispatch(addAIMessage(activeChatId, 'Error fetching AI response.', true));
-    // } finally {
-    //   dispatch(sendingFinished());
-    // }
+    try {
+      const reply = await fakeAIReply(trimmed);
+      dispatch(addAIMessage(activeChatId, reply));
+    } catch {
+      dispatch(addAIMessage(activeChatId, 'Error fetching AI response.', true));
+    } finally {
+      dispatch(sendingFinished());
+    }
   };
 
   const getMessages = async (chatId) => {
     try {
       const response = await axios.get(
-        `http://https://chatgpt12-b5gz.onrender.com/api/chat/messages/${chatId}`,
+        `https://chatgpt12-b5gz.onrender.com/api/chat/messages/${chatId}`,
         { withCredentials: true }
       );
 
