@@ -13,7 +13,7 @@ const app = express()
 
 
 app.use(cors({
-    origin: "https://chatgpt12-1.onrender.com",
+    origin: "https://chatgpt12.vercel.app",
     credentials: true,
 }))
 
