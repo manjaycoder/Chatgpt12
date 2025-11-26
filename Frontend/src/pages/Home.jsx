@@ -77,9 +77,9 @@ const Home = () => {
         dispatch(setChats(response.data.chats.reverse()));
       });
 
-    const tempSocket = io("https://chatgpt12-b5gz.onrender.com", {
-      withCredentials: true,
-    });
+    const tempSocket = io('https://chatgpt12-b5gz.onrender.com', {
+       withCredentials: true  // If using auth
+     });
 
     tempSocket.on("ai-response-message", (messagePayload) => {
       console.log("Received AI response:", messagePayload);
